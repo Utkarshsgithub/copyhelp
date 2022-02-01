@@ -1,0 +1,70 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --secondary-color: #101820;
+  --primary-color: #fff;
+}
+
+::selection {
+  color: var(--primary-color);
+  background: var(--secondary-color);
+}
+
+body {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: ;
+  line-height: 30px;
+}
+
+a:active {
+  background-color: transparent;
+}
+
+/* WEBSITE STYLING */
+
+#navbar {
+    display: flex;
+}
+
+#logo {
+
+}
+
+#navbar ul {
+
+}
+
+#navbar ul li {
+
+}
+/* UTILITY CLASSES */
+
+.remove_list_style {
+  list-style: none;
+}
+
+.remove_link_style {
+  text-decoration: none;
+  color: inherit;
+}
+
+.trans2s {
+  transition: 0.2s ease-in-out;
+}
+
+/* MEDIA QUERRIES */
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
