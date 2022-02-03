@@ -9,7 +9,9 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="master.css" />
-    <title>COPYHELP - Your Anytime Clipboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <title>COPYHELP - Your Permanent Clipboard</title>
     <style>
       html {
         scroll-behavior: smooth;
@@ -22,8 +24,8 @@
       }
 
       :root {
-        --secondary-color: #101820;
         --primary-color: #fff;
+        --secondary-color: #101820;
       }
 
       ::selection {
@@ -34,7 +36,7 @@
       body {
         background: var(--primary-color);
         color: var(--secondary-color);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Raleway', sans-serif;
         line-height: 30px;
       }
 
@@ -47,11 +49,12 @@
       #navbar {
         display: flex;
         padding: 35px 75px;
-        background: var(--secondary-color);
-        color: var(--primary-color);
+        color: var(--secondary-color);
+        font-family: 'Poppins', sans-serif;
       }
 
       #logo {
+        font-weight: bold;
       }
 
       #navbar ul {
@@ -60,8 +63,39 @@
       }
 
       #navbar ul li {
-          margin: 0 25px;
+        margin: 0 25px;
       }
+
+      #hero {
+        margin: 100px 0;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      #hero-img {
+        height: 400px;
+        width: 400px;
+        background: skyblue;
+        border-radius: 78% 22% 27% 73% / 66% 54% 46% 34%;
+      }
+
+      #hero-content {
+        width: 700px;
+      }
+
+      #hero-content h1 {
+        margin-bottom: 30px;
+        font-size: 3rem;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      #hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
       /* UTILITY CLASSES */
 
       .remove_list_style {
@@ -77,8 +111,10 @@
         transition: 0.2s ease-in-out;
       }
 
-      .yel {
-          color: yellow;
+      .link {
+        font-family: 'Poppins', sans-serif;
+        color: skyblue;
+        text-decoration: underline;
       }
 
       /* MEDIA QUERRIES */
@@ -92,16 +128,34 @@
   </head>
   <body>
     <nav id="navbar">
-      <div id="logo">
-        <h1> <span class="yel">COPY</span>HELP</h1>
-      </div>
+      <a class="remove_link_style" href="/">
+        <div id="logo">
+          <h1><span class="yel">COPY</span>HELP</h1>
+        </div>
+      </a>
 
       <ul class="remove_list_style">
-        <li> <a class="remove_link_style" href="/">Home</a> </li>
-        <li> <a class="remove_link_style" href="/login">Login</a> </li>
-        <li style="margin-right: 0;"> <a class="remove_link_style" href="/register">Register</a></li>
+        <li><a class="remove_link_style" href="/">home</a></li>
+        <li><a class="remove_link_style" href="/login">login</a></li>
+        <li style="margin-right: 0">
+          <a class="remove_link_style" href="/register">register</a>
+        </li>
       </ul>
     </nav>
+
+    <div id="hero">
+      <!-- <i class="far fa-clipboard"></i> -->
+      <div id="hero-img"></div>
+      <div id="hero-content">
+        <h1>What is COPYHELP?</h1>
+        <p>
+          Copyhelp is your permanent cliipboard. In copyhelp you can save anything and everything you use very often. For e.g I use some default css code for all of my project, what do you think will I write that code everytime? Nope, I'll use Copyhelp!
+        </p>
+        <p>Copyhelp will save your tons of time because you'll never have to search for that phone number that don't remember, you'll not have to rewrite that cold email that you always send.</p>
+      <a class="remove_link_style" href="/register"> <h3 class="link">Get Yourself A Copyhelp Account</h3> </a>
+      <a class="remove_link_style" href="/register"> <h3 class="link">Login To Your Copyhelp Account</h3> </a>
+      </div>
+    </div>
     <script src="master.js"></script>
   </body>
 </html>
