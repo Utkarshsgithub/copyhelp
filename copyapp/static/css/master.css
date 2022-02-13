@@ -48,6 +48,14 @@ a:active {
 }
 /* UTILITY CLASSES */
 
+.inactive {
+  opacity: .6;
+}
+
+.active {
+  opacity: 1;
+}
+
 .remove_list_style {
   list-style: none;
 }

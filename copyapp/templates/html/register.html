@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,9 +10,10 @@
       src="https://kit.fontawesome.com/ff40ef3d82.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="master.css" />
+    <link rel="stylesheet" href="css/master.css" />
     <title>Get Yourself A COPYHELP Account</title>
     <style>
       html {
@@ -45,7 +48,7 @@
       }
 
       form {
-        margin-top: 50px;
+        margin-top: 25px;
         display: flex;
         flex-direction: column;
         font-size: 2rem;
@@ -83,16 +86,36 @@
       #form-background {
         border-radius: 5px;
         color: var(--secondary-color);
+        display: flex;
+        align-items: center;
+      }
 
+      #form-background img {
+        transform: translateX(-50px);
+      }
+
+      #form-background #register-form {
+        transform: translateX(-50px);
       }
 
       #form-top {
         font-family: 'Poppins', sans-serif;
         color: var(--secondary-color);
+        font-size: 1.1rem;
       }
 
       form p {
         margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      form input {
+        margin-left: 5px;
+        padding: 5px;
+        border-radius: 8px;
+        outline: none;
+        font-size: medium;
       }
 
       /* UTILITY CLASSES */
@@ -128,6 +151,12 @@
         cursor: pointer;
         font-family: 'Poppins', sans-serif;
         margin-top: 15px;
+        transition: background-color .1s ease-in-out;
+      }
+
+      .btn:hover {
+        background: var(--secondary-color);
+        color: var(--primary-color);
       }
 
       /* MEDIA QUERRIES */
@@ -147,27 +176,33 @@
       </div>
     </a>
 
-      <ul class="remove_list_style">
-        <li><a class="remove_link_style" href="/">home</a></li>
-        <li><a class="remove_link_style" href="/login">login</a></li>
-        <li style="margin-right: 0">
-          <a class="remove_link_style" href="/register">register</a>
-        </li>
-      </ul>
+    <ul class="remove_list_style">
+      <li><a class="remove_link_style inactive" href="/">home</a></li>
+      <li><a class="remove_link_style inactive" href="/login">login</a></li>
+      <li>
+        <a class="remove_link_style active" href="/register">register</a>
+      </li>
+      <li style="margin-right: 0">
+        <a class="remove_link_style inactive" href="https://utkarshsgithub.github.io/portfolio/">creator</a>
+      </li>
+    </ul>
     </nav>
     <div class="center">
       <div id="form-background">
-        <div id="form-top">
-          <h1>Get A COPYHELP Account</h1>
-        </div>
-        <form method="post" action="/register/">
-          {% csrf_token %} {{ form.as_p }}
-          <div>
-            <button type="submit" class="btn">Create</button>
+        <img height="650px" src="{% static 'images/Saly-1.png' %}" alt="Register Form Image">
+        <div id="register-form">
+          <div id="form-top">
+            <h1>GET A COPYHELP ACCOUNT</h1>
           </div>
-        </form>
-      </div>
+          <form method="post" action="/register/">
+            {% csrf_token %} {{ form.as_p }}
+            <div>
+              <button type="submit" class="btn">Create</button>
+            </div>
+          </form>
+        </div>
     </div>
-    <script src="master.js"></script>
+    </div>
+    <script src="js/master.js"></script>
   </body>
 </html>

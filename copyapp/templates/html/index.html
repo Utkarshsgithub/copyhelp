@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,10 +10,21 @@
       src="https://kit.fontawesome.com/ff40ef3d82.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="master.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
-    <title>COPYHELP - Your Permanent Clipboard</title>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Copyhelp - Your Permanent Clipboard</title>
     <style>
       html {
         scroll-behavior: smooth;
@@ -36,7 +49,7 @@
       body {
         background: var(--primary-color);
         color: var(--secondary-color);
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         line-height: 30px;
       }
 
@@ -50,7 +63,7 @@
         display: flex;
         padding: 35px 75px;
         color: var(--secondary-color);
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
       }
 
       #logo {
@@ -67,7 +80,7 @@
       }
 
       #hero {
-        margin: 100px 0;
+        margin-top: 50px;
         padding: 25px;
         display: flex;
         align-items: center;
@@ -88,7 +101,7 @@
       #hero-content h1 {
         margin-bottom: 30px;
         font-size: 3rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
       }
 
       #hero-content p {
@@ -112,9 +125,17 @@
       }
 
       .link {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         color: skyblue;
         text-decoration: underline;
+      }
+
+      .inactive {
+        opacity: 0.6;
+      }
+
+      .active {
+        opacity: 1;
       }
 
       /* MEDIA QUERRIES */
@@ -135,27 +156,48 @@
       </a>
 
       <ul class="remove_list_style">
-        <li><a class="remove_link_style" href="/">home</a></li>
-        <li><a class="remove_link_style" href="/login">login</a></li>
+        <li><a class="remove_link_style active" href="/">home</a></li>
+        <li><a class="remove_link_style inactive" href="/login">login</a></li>
+        <li>
+          <a class="remove_link_style inactive" href="/register">register</a>
+        </li>
         <li style="margin-right: 0">
-          <a class="remove_link_style" href="/register">register</a>
+          <a
+            class="remove_link_style inactive"
+            href="https://utkarshsgithub.github.io/portfolio/"
+            >creator</a
+          >
         </li>
       </ul>
     </nav>
 
     <div id="hero">
-      <!-- <i class="far fa-clipboard"></i> -->
-      <div id="hero-img"></div>
+      <img
+        style="height: 500px"
+        src="{% static 'images/Saly-42.png' %}"
+        alt="kya ho gya yr"
+      />
       <div id="hero-content">
-        <h1>What is COPYHELP?</h1>
+        <h1>WHAT IS COPYHELP?</h1>
         <p>
-          Copyhelp is your permanent cliipboard. In copyhelp you can save anything and everything you use very often. For e.g I use some default css code for all of my project, what do you think will I write that code everytime? Nope, I'll use Copyhelp!
+          Copyhelp is your permanent cliipboard. In copyhelp you can save
+          anything and everything you use very often. For e.g I use some default
+          css code for all of my project, what do you think will I write that
+          code everytime? Nope, I'll use Copyhelp!
         </p>
-        <p>Copyhelp will save your tons of time because you'll never have to search for that phone number that don't remember, you'll not have to rewrite that cold email that you always send.</p>
-      <a class="remove_link_style" href="/register"> <h3 class="link">Get Yourself A Copyhelp Account</h3> </a>
-      <a class="remove_link_style" href="/register"> <h3 class="link">Login To Your Copyhelp Account</h3> </a>
+        <p>
+          Copyhelp will save your tons of time because you'll never have to
+          search for that phone number that don't remember, you'll not have to
+          rewrite that cold email that you always send.
+        </p>
+        <a class="remove_link_style" href="/register">
+          <h3 class="link">Get Yourself A Copyhelp Account</h3>
+        </a>
+        <a class="remove_link_style" href="/register">
+          <h3 class="link">Login To Your Copyhelp Account</h3>
+        </a>
       </div>
     </div>
-    <script src="master.js"></script>
+    <script src="{% static 'js/master.js' %}"></script>
   </body>
 </html>

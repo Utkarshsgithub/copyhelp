@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,9 +10,10 @@
       src="https://kit.fontawesome.com/ff40ef3d82.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="master.css" />
+    <link rel="stylesheet" href="css/master.css" />
     <title>Login To Your COPYHELP Account</title>
     <style>
       html {
@@ -89,6 +92,12 @@
         border-radius: 30px;
         cursor: pointer;
         font-family: 'Poppins', sans-serif;
+        transition: background-color .1s ease-in-out;
+      }
+
+      .btn:hover {
+        background: var(--secondary-color);
+        color: var(--primary-color);
       }
 
       /* MEDIA QUERRIES */
@@ -109,9 +118,14 @@
       </a>
 
       <ul class="remove_list_style">
-        <li> <a class="remove_link_style" href="/">Home</a> </li>
-        <li> <a class="remove_link_style" href="/login">Login</a> </li>
-        <li style="margin-right: 0;"> <a class="remove_link_style" href="/register">Register</a></li>
+        <li><a class="remove_link_style inactive" href="/">home</a></li>
+        <li><a class="remove_link_style inactive" href="/login">login</a></li>
+        <li>
+          <a class="remove_link_style active" href="/register">register</a>
+        </li>
+        <li style="margin-right: 0">
+          <a class="remove_link_style inactive" href="https://utkarshsgithub.github.io/portfolio/">creator</a>
+        </li>
       </ul>
     </nav>
 
@@ -121,6 +135,6 @@
       <button class="btn">Login</button>
     </form>
 
-    <script src="master.js"></script>
+    <script src="js/master.js"></script>
   </body>
 </html>
