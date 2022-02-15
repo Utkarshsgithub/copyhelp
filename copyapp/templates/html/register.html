@@ -10,9 +10,19 @@
       src="https://kit.fontawesome.com/ff40ef3d82.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/master.css" />
     <title>Get Yourself A COPYHELP Account</title>
     <style>
@@ -39,7 +49,7 @@
       body {
         background: var(--primary-color);
         color: var(--secondary-color);
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         line-height: 30px;
       }
 
@@ -68,7 +78,7 @@
         display: flex;
         padding: 35px 75px;
         color: var(--secondary-color);
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
       }
 
       #logo {
@@ -99,7 +109,7 @@
       }
 
       #form-top {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         color: var(--secondary-color);
         font-size: 1.1rem;
       }
@@ -116,6 +126,19 @@
         border-radius: 8px;
         outline: none;
         font-size: medium;
+      }
+
+      .inactive {
+        opacity: 0.6;
+      }
+
+      .inactive:hover {
+        opacity: 1;
+        transition: opacity .1s ease-in-out;
+      }
+
+      .active {
+        opacity: 1;
       }
 
       /* UTILITY CLASSES */
@@ -149,9 +172,9 @@
         padding: 15px 20px;
         border-radius: 30px;
         cursor: pointer;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         margin-top: 15px;
-        transition: background-color .1s ease-in-out;
+        transition: background-color 0.1s ease-in-out;
       }
 
       .btn:hover {
@@ -171,25 +194,33 @@
   <body>
     <nav id="navbar">
       <a class="remove_link_style" href="/">
-      <div id="logo">
-        <h1><span class="yel">COPY</span>HELP</h1>
-      </div>
-    </a>
+        <div id="logo">
+          <h1><span class="yel">COPY</span>HELP</h1>
+        </div>
+      </a>
 
-    <ul class="remove_list_style">
-      <li><a class="remove_link_style inactive" href="/">home</a></li>
-      <li><a class="remove_link_style inactive" href="/login">login</a></li>
-      <li>
-        <a class="remove_link_style active" href="/register">register</a>
-      </li>
-      <li style="margin-right: 0">
-        <a class="remove_link_style inactive" href="https://utkarshsgithub.github.io/portfolio/">creator</a>
-      </li>
-    </ul>
+      <ul class="remove_list_style">
+        <li><a class="remove_link_style inactive" href="/">home</a></li>
+        <li><a class="remove_link_style inactive" href="/login">login</a></li>
+        <li>
+          <a class="remove_link_style active" href="/register">register</a>
+        </li>
+        <li style="margin-right: 0">
+          <a
+            class="remove_link_style inactive"
+            href="https://utkarshsgithub.github.io/portfolio/"
+            >creator</a
+          >
+        </li>
+      </ul>
     </nav>
     <div class="center">
       <div id="form-background">
-        <img height="650px" src="{% static 'images/Saly-1.png' %}" alt="Register Form Image">
+        <img
+          height="650px"
+          src="{% static 'images/Saly-1.png' %}"
+          alt="Register Form Image"
+        />
         <div id="register-form">
           <div id="form-top">
             <h1>GET A COPYHELP ACCOUNT</h1>
@@ -201,7 +232,7 @@
             </div>
           </form>
         </div>
-    </div>
+      </div>
     </div>
     <script src="js/master.js"></script>
   </body>

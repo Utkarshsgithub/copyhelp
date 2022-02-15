@@ -134,8 +134,13 @@
         opacity: 0.6;
       }
 
-      .active {
+      .inactive:hover {
         opacity: 1;
+        transition: opacity .1s ease-in-out;
+      }
+
+      .active {
+        opacity: .9;
       }
 
       /* MEDIA QUERRIES */
