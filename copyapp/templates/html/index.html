@@ -1,208 +1,33 @@
+{% extends 'html/base.html' %} 
+
+{% block body %}
 {% load static %}
+<div id="hero">
+  <img
+    style="height: 500px"
+    src="{% static 'images/Saly-42.png' %}"
+    alt="kya ho gya yr"
+  />
+  <div id="hero-content">
+    <h1>WHAT IS COPYHELP?</h1>
+    <p>
+      Copyhelp is your permanent cliipboard. In copyhelp you can save anything
+      and everything you use very often. For e.g I use some default css code for
+      all of my project, what do you think will I write that code everytime?
+      Nope, I'll use Copyhelp!
+    </p>
+    <p>
+      Copyhelp will save your tons of time because you'll never have to search
+      for that phone number that don't remember, you'll not have to rewrite that
+      cold email that you always send.
+    </p>
+    <a class="remove_link_style" href="/register">
+      <h3 class="link">Get Yourself A Copyhelp Account</h3>
+    </a>
+    <a class="remove_link_style" href="/register">
+      <h3 class="link">Login To Your Copyhelp Account</h3>
+    </a>
+  </div>
+</div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/ff40ef3d82.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="{% static 'css/master.css' %}" />
-    <link
-      rel="shortcut icon"
-      href="{% static 'images/favicon.ico' %}"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
-      rel="stylesheet"
-    />
-    <title>Copyhelp - Your Permanent Clipboard</title>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --primary-color: #fff;
-        --secondary-color: #101820;
-      }
-
-      ::selection {
-        color: var(--primary-color);
-        background: var(--secondary-color);
-      }
-
-      body {
-        background: var(--primary-color);
-        color: var(--secondary-color);
-        font-family: "Raleway", sans-serif;
-        line-height: 30px;
-      }
-
-      a:active {
-        background-color: transparent;
-      }
-
-      /* WEBSITE STYLING */
-
-      #navbar {
-        display: flex;
-        padding: 35px 75px;
-        color: var(--secondary-color);
-        font-family: "Poppins", sans-serif;
-      }
-
-      #logo {
-        font-weight: bold;
-      }
-
-      #navbar ul {
-        display: flex;
-        margin-left: auto;
-      }
-
-      #navbar ul li {
-        margin: 0 25px;
-      }
-
-      #hero {
-        margin-top: 50px;
-        padding: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-      }
-
-      #hero-img {
-        height: 400px;
-        width: 400px;
-        background: skyblue;
-        border-radius: 78% 22% 27% 73% / 66% 54% 46% 34%;
-      }
-
-      #hero-content {
-        width: 700px;
-      }
-
-      #hero-content h1 {
-        margin-bottom: 30px;
-        font-size: 3rem;
-        font-family: "Poppins", sans-serif;
-      }
-
-      #hero-content p {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-      }
-
-      /* UTILITY CLASSES */
-
-      .remove_list_style {
-        list-style: none;
-      }
-
-      .remove_link_style {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .trans2s {
-        transition: 0.2s ease-in-out;
-      }
-
-      .link {
-        font-family: "Poppins", sans-serif;
-        color: skyblue;
-        text-decoration: underline;
-      }
-
-      .inactive {
-        opacity: 0.6;
-      }
-
-      .inactive:hover {
-        opacity: 1;
-        transition: opacity .1s ease-in-out;
-      }
-
-      .active {
-        opacity: .9;
-      }
-
-      /* MEDIA QUERRIES */
-
-      @media only screen and (max-width: 600px) {
-        body {
-          background-color: lightblue;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <nav id="navbar">
-      <a class="remove_link_style" href="/">
-        <div id="logo">
-          <h1><span class="yel">COPY</span>HELP</h1>
-        </div>
-      </a>
-
-      <ul class="remove_list_style">
-        <li><a class="remove_link_style active" href="/">home</a></li>
-        <li><a class="remove_link_style inactive" href="/login">login</a></li>
-        <li>
-          <a class="remove_link_style inactive" href="/register">register</a>
-        </li>
-        <li style="margin-right: 0">
-          <a
-            class="remove_link_style inactive"
-            href="https://utkarshsgithub.github.io/portfolio/"
-            >creator</a
-          >
-        </li>
-      </ul>
-    </nav>
-
-    <div id="hero">
-      <img
-        style="height: 500px"
-        src="{% static 'images/Saly-42.png' %}"
-        alt="kya ho gya yr"
-      />
-      <div id="hero-content">
-        <h1>WHAT IS COPYHELP?</h1>
-        <p>
-          Copyhelp is your permanent cliipboard. In copyhelp you can save
-          anything and everything you use very often. For e.g I use some default
-          css code for all of my project, what do you think will I write that
-          code everytime? Nope, I'll use Copyhelp!
-        </p>
-        <p>
-          Copyhelp will save your tons of time because you'll never have to
-          search for that phone number that don't remember, you'll not have to
-          rewrite that cold email that you always send.
-        </p>
-        <a class="remove_link_style" href="/register">
-          <h3 class="link">Get Yourself A Copyhelp Account</h3>
-        </a>
-        <a class="remove_link_style" href="/register">
-          <h3 class="link">Login To Your Copyhelp Account</h3>
-        </a>
-      </div>
-    </div>
-    <script src="{% static 'js/master.js' %}"></script>
-  </body>
-</html>
+{% endblock %}

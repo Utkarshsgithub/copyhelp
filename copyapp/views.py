@@ -1,15 +1,33 @@
-from django.shortcuts import render, HttpResponse, redirect
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login as loginUser
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 def home(request):
     return render(request, 'html/index.html')
 
 def login(request):
-    form = AuthenticationForm()
-    context = {
-        "from": form
-    }
-    return render(request, 'html/login.html', context=context)
+    if request.method == 'GET':
+        form = AuthenticationForm()
+        context = {
+            "form": form,
+            "hi": True
+        }
+        return render(request, 'html/login.html', context=context)
+    else:
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                loginUser(request, user)
+                return redirect('workspace')
+        else:
+            context = {
+                "form": form,
+                "hi": True
+            }
+            return render(request, 'html/login.html', context=context)
 
 def register(request):
     if request.method == 'GET':
@@ -31,4 +49,5 @@ def register(request):
         else:
             return render(request, 'html/register.html', context=context)
 
-
+def workspace(request):
+    return render(request, 'html/workspace.html')

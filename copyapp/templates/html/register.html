@@ -1,239 +1,76 @@
+{% extends 'html/base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/ff40ef3d82.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="shortcut icon"
-      href="{% static 'images/favicon.ico' %}"
-      type="image/x-icon"
+{% block style%}
+<style>
+  #register-form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+  }
+
+  .helptext {
+    display: none;
+  }
+
+  #form-background {
+    border-radius: 5px;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+  }
+
+  #form-background img {
+    transform: translateX(-50px);
+  }
+
+  #form-background #register-form {
+    transform: translateX(-50px);
+  }
+
+  #form-top {
+    font-family: "Poppins", sans-serif;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+  }
+
+  #register-form p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  #register-form input {
+    margin-left: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    outline: none;
+    font-size: medium;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="center">
+  <div id="form-background">
+    <img
+      height="650px"
+      src="{% static 'images/Saly-1.png' %}"
+      alt="Register Form Image"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/master.css" />
-    <title>Get Yourself A COPYHELP Account</title>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --primary-color: #fff;
-        --secondary-color: #101820;
-      }
-
-      ::selection {
-        color: var(--primary-color);
-        background: var(--secondary-color);
-      }
-
-      body {
-        background: var(--primary-color);
-        color: var(--secondary-color);
-        font-family: "Raleway", sans-serif;
-        line-height: 30px;
-      }
-
-      a:active {
-        background-color: transparent;
-      }
-
-      form {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        font-size: 2rem;
-      }
-
-      form ul {
-        display: none;
-      }
-
-      .helptext {
-        display: none;
-      }
-
-      /* WEBSITE STYLING */
-
-      #navbar {
-        display: flex;
-        padding: 35px 75px;
-        color: var(--secondary-color);
-        font-family: "Poppins", sans-serif;
-      }
-
-      #logo {
-      }
-
-      #navbar ul {
-        display: flex;
-        margin-left: auto;
-      }
-
-      #navbar ul li {
-        margin: 0 25px;
-      }
-
-      #form-background {
-        border-radius: 5px;
-        color: var(--secondary-color);
-        display: flex;
-        align-items: center;
-      }
-
-      #form-background img {
-        transform: translateX(-50px);
-      }
-
-      #form-background #register-form {
-        transform: translateX(-50px);
-      }
-
-      #form-top {
-        font-family: "Poppins", sans-serif;
-        color: var(--secondary-color);
-        font-size: 1.1rem;
-      }
-
-      form p {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-      }
-
-      form input {
-        margin-left: 5px;
-        padding: 5px;
-        border-radius: 8px;
-        outline: none;
-        font-size: medium;
-      }
-
-      .inactive {
-        opacity: 0.6;
-      }
-
-      .inactive:hover {
-        opacity: 1;
-        transition: opacity .1s ease-in-out;
-      }
-
-      .active {
-        opacity: 1;
-      }
-
-      /* UTILITY CLASSES */
-
-      .remove_list_style {
-        list-style: none;
-      }
-
-      .remove_link_style {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .trans2s {
-        transition: 0.2s ease-in-out;
-      }
-
-      .center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 80vh;
-      }
-
-      .btn {
-        border: none;
-        color: var(--secondary-color);
-        background: transparent;
-        border: 2px solid var(--secondary-color);
-        font-size: medium;
-        padding: 15px 20px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-family: "Poppins", sans-serif;
-        margin-top: 15px;
-        transition: background-color 0.1s ease-in-out;
-      }
-
-      .btn:hover {
-        background: var(--secondary-color);
-        color: var(--primary-color);
-      }
-
-      /* MEDIA QUERRIES */
-
-      @media only screen and (max-width: 600px) {
-        body {
-          background-color: lightblue;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <nav id="navbar">
-      <a class="remove_link_style" href="/">
-        <div id="logo">
-          <h1><span class="yel">COPY</span>HELP</h1>
-        </div>
-      </a>
-
-      <ul class="remove_list_style">
-        <li><a class="remove_link_style inactive" href="/">home</a></li>
-        <li><a class="remove_link_style inactive" href="/login">login</a></li>
-        <li>
-          <a class="remove_link_style active" href="/register">register</a>
-        </li>
-        <li style="margin-right: 0">
-          <a
-            class="remove_link_style inactive"
-            href="https://utkarshsgithub.github.io/portfolio/"
-            >creator</a
-          >
-        </li>
-      </ul>
-    </nav>
-    <div class="center">
-      <div id="form-background">
-        <img
-          height="650px"
-          src="{% static 'images/Saly-1.png' %}"
-          alt="Register Form Image"
-        />
-        <div id="register-form">
-          <div id="form-top">
-            <h1>GET A COPYHELP ACCOUNT</h1>
-          </div>
-          <form method="post" action="/register/">
-            {% csrf_token %} {{ form.as_p }}
-            <div>
-              <button type="submit" class="btn">Create</button>
-            </div>
-          </form>
-        </div>
+    <div id="register-form">
+      <div id="form-top">
+        <h1>GET A COPYHELP ACCOUNT</h1>
       </div>
+      <form id="register-form" method="post" action="/register/">
+        {% csrf_token %} {{ form.as_p }}
+        <div>
+          <button type="submit" class="btn">Create</button>
+        </div>
+      </form>
     </div>
-    <script src="js/master.js"></script>
-  </body>
-</html>
+  </div>
+</div>
+{% endblock %}

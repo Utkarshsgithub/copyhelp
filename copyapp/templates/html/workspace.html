@@ -1,0 +1,148 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ff40ef3d82.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Copyhelp - Your Permanent Clipboard</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #fff;
+        --secondary-color: #101820;
+      }
+
+      ::selection {
+        color: var(--primary-color);
+        background: var(--secondary-color);
+      }
+
+      body {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        font-family: "Raleway", sans-serif;
+        line-height: 30px;
+      }
+
+      a:active {
+        background-color: transparent;
+      }
+
+      /* WEBSITE STYLING */
+
+      #navbar {
+        display: flex;
+        padding: 35px 75px;
+        color: var(--secondary-color);
+        font-family: "Poppins", sans-serif;
+      }
+
+      #logo {
+        font-weight: bold;
+      }
+
+      #navbar ul {
+        display: flex;
+        margin-left: auto;
+      }
+
+      #navbar ul li {
+        margin: 0 25px;
+      }
+
+      /* UTILITY CLASSES */
+
+      .remove_list_style {
+        list-style: none;
+      }
+
+      .remove_link_style {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .trans2s {
+        transition: 0.2s ease-in-out;
+      }
+
+      .link {
+        font-family: "Poppins", sans-serif;
+        color: #f07e7f;
+        text-decoration: underline;
+      }
+
+      .inactive {
+        opacity: 0.6;
+      }
+
+      .inactive:hover {
+        opacity: 1;
+        transition: opacity .1s ease-in-out;
+      }
+
+      .active {
+        opacity: .9;
+      }
+
+      /* MEDIA QUERRIES */
+
+      @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <a class="remove_link_style" href="/">
+        <div id="logo">
+          <h1><span class="yel">COPY</span>HELP</h1>
+        </div>
+      </a>
+
+      <ul class="remove_list_style">
+        <li><a class="remove_link_style active" href="/">home</a></li>
+        <li><a class="remove_link_style inactive" href="/login">logout</a></li>
+        <li style="margin-right: 0">
+          <a
+            class="remove_link_style inactive"
+            href="https://utkarshsgithub.github.io/portfolio/"
+            >creator</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <script src="{% static 'js/master.js' %}"></script>
+  </body>
+</html>
