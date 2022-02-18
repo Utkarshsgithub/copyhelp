@@ -10,7 +10,6 @@
       src="https://kit.fontawesome.com/ff40ef3d82.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="{% static 'css/master.css' %}" />
     <link
       rel="shortcut icon"
       href="{% static 'images/favicon.ico' %}"
@@ -24,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
       rel="stylesheet"
     />
-    <title>Copyhelp - Your Permanent Clipboard</title>
+    <title>Workspace | Copyhelp</title>
     <style>
       html {
         scroll-behavior: smooth;
@@ -79,6 +78,28 @@
         margin: 0 25px;
       }
 
+      #hero-space {
+        margin-top: 50px;
+        display: flex;
+      }
+
+      #copy-form {
+        margin-left: 50px;
+        width: 400px;
+        padding: 50px;
+        background: #f07e7f;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      #copy-form form {
+        margin-top: 25px;
+        font-size: 1.5rem;
+        font-family: "Raleway", sans-serif;
+      }
+
       /* UTILITY CLASSES */
 
       .remove_list_style {
@@ -113,6 +134,29 @@
         opacity: .9;
       }
 
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn {
+        cursor: pointer;
+        padding: 15px 20px;
+        color: #fff;
+        border: 2px solid #fff;
+        background: transparent;
+        font-size: medium;
+        font-family: "Poppins", sans-serif;
+        border-radius: 30px;
+        transition: background-color .2s ease-in-out;
+      }
+
+      .btn:hover {
+          background: #fff;
+          color: #f07e7f;
+      }
+
       /* MEDIA QUERRIES */
 
       @media only screen and (max-width: 600px) {
@@ -140,9 +184,21 @@
             >creator</a
           >
         </li>
+        </li>
       </ul>
     </nav>
+    <div id="hero-space">
+      <div id="copy-form">
+        <h1 class="center">ADD A COPY</h1>
+        <form action="/add-copy/" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button class="btn" type="submit">Add Copy</button>
+        </form>
+      </div>
+      <div id="display-copies">
 
-    <script src="{% static 'js/master.js' %}"></script>
+      </div>
+    </div>
   </body>
 </html>

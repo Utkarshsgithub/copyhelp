@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginUser
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from copyapp.forms import COPYForm
 
 def home(request):
     return render(request, 'html/index.html')
@@ -50,4 +51,16 @@ def register(request):
             return render(request, 'html/register.html', context=context)
 
 def workspace(request):
-    return render(request, 'html/workspace.html')
+    form = COPYForm()
+    return render(request, 'html/workspace.html', context={'form':form})
+
+def add_copy(request):
+    user = request.user
+    form = COPYForm(request.POST)
+    if form.is_valid():
+        copy = form.save(commit=False)
+        copy.user = user
+        copy.save()
+        return redirect('workspace')
+    else:
+        return render(request, 'html/index.html', context={'form':form})
