@@ -58,7 +58,8 @@ def register(request):
 
 def workspace(request):
     form = COPYForm()
-    copies = COPY.objects.all()
+    user = request.user
+    copies = COPY.objects.filter(user = user)
     return render(request, 'html/workspace.html', context={'form':form, 'copies': copies})
 
 def add_copy(request):

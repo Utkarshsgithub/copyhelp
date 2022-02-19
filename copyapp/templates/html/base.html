@@ -3,26 +3,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Copyhelp is a permanent clipboard. In Copyhelp, you can save anything and everything you need to copy very often."
+    />
+
+    <meta
+      name="keywords"
+      content="copyhelp, utkarshcodes, permanent clipboard, copyhelp by utkarshcodes, copyhelp project utkarshcodes, utkarshcodes projects, copyhelp permanent clipboard, projects by utkarshcodes, utkarshcodes clipboard project, clipboard project utkarshcodes, copyhelp project"
+    />
+
+    <meta
+      name="twitter:card"
+      content="Copyhelp is a permanent clipboard where you can save anything you need to copy very often."
+    />
+
     <script
       src="https://kit.fontawesome.com/ff40ef3d82.js"
       crossorigin="anonymous"
     ></script>
+
     <link
       rel="shortcut icon"
       href="{% static 'images/favicon.ico' %}"
       type="image/x-icon"
     />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       rel="stylesheet"
     />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
       rel="stylesheet"
     />
-    <title>Copyhelp - Your Permanent Clipboard</title>
+
+    <title>Copyhelp | Your Permanent Clipboard</title>
+
     <style>
       html {
         scroll-behavior: smooth;
@@ -77,36 +100,6 @@
         margin: 0 25px;
       }
 
-      #hero {
-        margin-top: 50px;
-        padding: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-      }
-
-      #hero-img {
-        height: 400px;
-        width: 400px;
-        background: skyblue;
-        border-radius: 78% 22% 27% 73% / 66% 54% 46% 34%;
-      }
-
-      #hero-content {
-        width: 700px;
-      }
-
-      #hero-content h1 {
-        margin-bottom: 30px;
-        font-size: 3rem;
-        font-family: "Poppins", sans-serif;
-      }
-
-      #hero-content p {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-      }
-
       /* UTILITY CLASSES */
 
       .remove_list_style {
@@ -126,6 +119,7 @@
         font-family: "Poppins", sans-serif;
         color: #f07e7f;
         text-decoration: underline;
+        margin-bottom: 10px;
       }
 
       .btn {
@@ -136,21 +130,30 @@
         font-size: medium;
         font-family: "Poppins", sans-serif;
         border-radius: 30px;
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
       }
 
       .btn:hover {
-          background: #111;
-          color: #fff;
+        background: #111;
+        color: #fff;
       }
 
-      /* MEDIA QUERRIES */
+      .flexbox {
+        display: flex;
+      }
 
-      @media only screen and (max-width: 600px) {
-        body {
-          background-color: lightblue;
+      @media only screen and (max-width: 1080px) {
+        #navbar ul {
+          display: none;
         }
       }
+
+      @media only screen and (max-width: 550px) {
+        #navbar {
+          padding: 25px 30px;
+        }
+      }
+      
     </style>
     {% block style %} {% endblock %}
   </head>
@@ -179,6 +182,5 @@
     </nav>
 
     {% block body %} {% endblock %}
-
   </body>
 </html>

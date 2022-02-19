@@ -1,25 +1,112 @@
-{% extends 'html/base.html' %} 
+{% extends 'html/base.html' %} {% load static %} {% block style %}
 
-{% block body %}
-{% load static %}
+<style>
+  #hero {
+    margin-top: 50px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #hero img {
+    height: 500px;
+  }
+
+  #hero-content {
+    width: 700px;
+  }
+
+  #hero-content h1 {
+    margin-bottom: 30px;
+    font-size: 3rem;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    #hero {
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #hero img {
+      margin-left: 50px;
+    }
+
+    #hero-content {
+      margin-left: 100px;
+    }
+  }
+
+  @media only screen and (max-width: 880px) {
+    #hero img {
+      margin-left: 12.5px;
+    }
+
+    #hero-content {
+      margin-left: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 730px) {
+    #hero-content {
+      width: auto;
+      margin-right: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 610px) {
+    #hero img {
+      height: 400px;
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    #hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    #hero img {
+      height: 300px;
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
+    #hero-content h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    #hero-content h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+{% endblock %} {% block body %}
+
 <div id="hero">
-  <img
-    style="height: 500px"
-    src="{% static 'images/Saly-42.png' %}"
-    alt="kya ho gya yr"
-  />
+  <img src="{% static 'images/Saly-42.png' %}" alt="kya ho gya yr" />
   <div id="hero-content">
     <h1>WHAT IS COPYHELP?</h1>
     <p>
       Copyhelp is your permanent cliipboard. In copyhelp you can save anything
-      and everything you use very often. For e.g I use some default css code for
-      all of my project, what do you think will I write that code everytime?
-      Nope, I'll use Copyhelp!
+      and everything you need to copy very often. For e.g I use some code for
+      all of my project, do you think that I'll write that code everytime? Nope,
+      I'll use Copyhelp!
     </p>
-    <p>
+    <p id="second-para">
       Copyhelp will save your tons of time because you'll never have to search
-      for that phone number that don't remember, you'll not have to rewrite that
-      cold email that you always send.
+      for that phone number that you don't remember, you can save that email
+      template that you send daily.
     </p>
     <a class="remove_link_style" href="/register">
       <h3 class="link">Get Yourself A Copyhelp Account</h3>

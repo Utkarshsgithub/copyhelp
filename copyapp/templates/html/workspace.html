@@ -6,23 +6,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/ff40ef3d82.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="shortcut icon"
-      href="{% static 'images/favicon.ico' %}"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
-      rel="stylesheet"
-    />
+    
+    <meta name="description" content="Copyhelp is a permanent clipboard. In Copyhelp, you can save anything and everything you need to copy very often.">
+
+    <meta name="keywords" content="copyhelp, utkarshcodes, permanent clipboard, copyhelp by utkarshcodes, copyhelp project utkarshcodes, utkarshcodes projects, copyhelp permanent clipboard, projects by utkarshcodes, utkarshcodes clipboard project, clipboard project utkarshcodes, copyhelp project">
+
+    <meta name="twitter:card" content="Copyhelp is a permanent clipboard where you can save anything you need to copy very often.">
+
+    <script src="https://kit.fontawesome.com/ff40ef3d82.js" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet"/>
+
     <title>Workspace | Copyhelp</title>
     <style>
       html {
@@ -120,13 +118,21 @@
         display: flex;
       }
 
-      .copy{
+      .copy {
         padding: 12.5px 25px;
         background: #f07e802f;
-        cursor: pointer;
         border-radius: 5px;
         margin: 25px;
         height: 55px;
+        display: flex;
+      }
+
+      .copy p {
+        cursor: pointer;
+      }
+
+      .copy p:hover {
+         text-decoration: underline;
       }
 
       /* UTILITY CLASSES */
@@ -227,16 +233,20 @@
       </div>
       <div id="display-copies">
         {% for copy in copies %}
-        <div class="copy" onclick="()=>{}">
-          {{copy.title}}
-          <p style="display: none;" id="content">{{copy.content}}</p>
+        <div class="copy">
+          <p id="title" onclick="getTextCopied()">{{copy.title}}</p><i style="margin-left: 5px;" class="fa-solid fa-trash"></i>
+          <input style="display:none;" id="content" value="{{copy.content}}"></input>
         </div>
         {% endfor %}
       </div>
     </div>
     <script>
       function getTextCopied() {
-        
+        var copyText = document.getElementById("content")
+        console.log(copyText.value)
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value)
       }
     </script>
   </body>
