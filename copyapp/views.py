@@ -2,9 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as loginUser
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from copyapp.forms import COPYForm
+from copyapp.models import COPY
+from django.contrib import auth
 
 def home(request):
-    return render(request, 'html/index.html')
+    user = request.user
+    if user.is_authenticated:
+        return redirect('workspace')
+    else:
+        return render(request, 'html/index.html')
 
 def login(request):
     if request.method == 'GET':
@@ -52,7 +58,8 @@ def register(request):
 
 def workspace(request):
     form = COPYForm()
-    return render(request, 'html/workspace.html', context={'form':form})
+    copies = COPY.objects.all()
+    return render(request, 'html/workspace.html', context={'form':form, 'copies': copies})
 
 def add_copy(request):
     user = request.user
@@ -64,3 +71,7 @@ def add_copy(request):
         return redirect('workspace')
     else:
         return render(request, 'html/index.html', context={'form':form})
+
+def logout(request):
+    auth.logout(request)
+    return redirect('home')

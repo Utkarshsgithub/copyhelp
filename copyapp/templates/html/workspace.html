@@ -85,8 +85,8 @@
 
       #copy-form {
         margin-left: 50px;
-        width: 400px;
         padding: 50px;
+        width: 450px;
         background: #f07e7f;
         color: #fff;
         font-family: "Poppins", sans-serif;
@@ -96,8 +96,37 @@
 
       #copy-form form {
         margin-top: 25px;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-family: "Raleway", sans-serif;
+      }
+
+      #copy-form form p {
+        margin: 10px 0;
+      }
+
+      #copy-form form textarea {
+        margin-top: 10px;
+      }
+
+      #copy-form form input, textarea {
+        border-radius: 10px;
+        padding: 10px;
+        outline: none;
+        border: none;
+      }
+
+      #display-copies{
+        margin-left: 100px;
+        display: flex;
+      }
+
+      .copy{
+        padding: 12.5px 25px;
+        background: #f07e802f;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 25px;
+        height: 55px;
       }
 
       /* UTILITY CLASSES */
@@ -176,13 +205,13 @@
 
       <ul class="remove_list_style">
         <li><a class="remove_link_style active" href="/">home</a></li>
-        <li><a class="remove_link_style inactive" href="/login">logout</a></li>
+        <li><a class="remove_link_style inactive" href="/logout">logout</a></li>
         <li style="margin-right: 0">
           <a
+            target="_blank"
             class="remove_link_style inactive"
             href="https://utkarshsgithub.github.io/portfolio/"
-            >creator</a
-          >
+            >creator</a>
         </li>
         </li>
       </ul>
@@ -197,8 +226,18 @@
         </form>
       </div>
       <div id="display-copies">
-
+        {% for copy in copies %}
+        <div class="copy" onclick="()=>{}">
+          {{copy.title}}
+          <p style="display: none;" id="content">{{copy.content}}</p>
+        </div>
+        {% endfor %}
       </div>
     </div>
+    <script>
+      function getTextCopied() {
+        
+      }
+    </script>
   </body>
 </html>
